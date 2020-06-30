@@ -140,7 +140,7 @@ def book_person():
 
 
 if __name__ == '__main__':
-    # movie_info()
-    # movie_person()
-    # book_info()
+    movie_info()
+    movie_person()
+    book_info()
     book_person()

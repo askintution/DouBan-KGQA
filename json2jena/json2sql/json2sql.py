@@ -27,10 +27,10 @@ def movie_genre():
 
     # 连接mysql数据库
     kgqa_connection = pymysql.connect(
-        host='localhost',
+        host='127.0.0.1',
         port=3306,
         user='root',
-        password='root123456',
+        password='123456',
         db='douban_kgqa',
         cursorclass=pymysql.cursors.DictCursor
     )
@@ -60,10 +60,10 @@ def movie_info():
 
     # 连接mysql数据库
     kgqa_connection = pymysql.connect(
-        host='localhost',
+        host='127.0.0.1',
         port=3306,
         user='root',
-        password='root123456',
+        password='123456',
         db='douban_kgqa',
         cursorclass=pymysql.cursors.DictCursor
     )
@@ -110,10 +110,10 @@ def movie_person():
 
     # 连接mysql数据库
     kgqa_connection = pymysql.connect(
-        host='localhost',
+        host='127.0.0.1',
         port=3306,
         user='root',
-        password='root123456',
+        password='123456',
         db='douban_kgqa',
         cursorclass=pymysql.cursors.DictCursor
     )
@@ -157,10 +157,10 @@ def movie_to_genre():
 
     # 连接mysql数据库
     kgqa_connection = pymysql.connect(
-        host='localhost',
+        host='127.0.0.1',
         port=3306,
         user='root',
-        password='root123456',
+        password='123456',
         db='douban_kgqa',
         cursorclass=pymysql.cursors.DictCursor
     )
@@ -199,10 +199,10 @@ def actor_to_movie():
 
     # 连接mysql数据库
     kgqa_connection = pymysql.connect(
-        host='localhost',
+        host='127.0.0.1',
         port=3306,
         user='root',
-        password='root123456',
+        password='123456',
         db='douban_kgqa',
         cursorclass=pymysql.cursors.DictCursor
     )
@@ -242,10 +242,10 @@ def writer_to_movie():
 
     # 连接mysql数据库
     kgqa_connection = pymysql.connect(
-        host='localhost',
+        host='127.0.0.1',
         port=3306,
         user='root',
-        password='root123456',
+        password='123456',
         db='douban_kgqa',
         cursorclass=pymysql.cursors.DictCursor
     )
@@ -285,10 +285,10 @@ def director_to_movie():
 
     # 连接mysql数据库
     kgqa_connection = pymysql.connect(
-        host='localhost',
+        host='127.0.0.1',
         port=3306,
         user='root',
-        password='root123456',
+        password='123456',
         db='douban_kgqa',
         cursorclass=pymysql.cursors.DictCursor
     )
@@ -336,10 +336,10 @@ def book_genre():
 
     # 连接mysql数据库
     kgqa_connection = pymysql.connect(
-        host='localhost',
+        host='127.0.0.1',
         port=3306,
         user='root',
-        password='root123456',
+        password='123456',
         db='douban_kgqa',
         cursorclass=pymysql.cursors.DictCursor
     )
@@ -368,10 +368,10 @@ def book_info():
 
     # 连接mysql数据库
     kgqa_connection = pymysql.connect(
-        host='localhost',
+        host='127.0.0.1',
         port=3306,
         user='root',
-        password='root123456',
+        password='123456',
         db='douban_kgqa',
         cursorclass=pymysql.cursors.DictCursor
     )
@@ -417,10 +417,10 @@ def book_person():
 
     # 连接mysql数据库
     kgqa_connection = pymysql.connect(
-        host='localhost',
+        host='127.0.0.1',
         port=3306,
         user='root',
-        password='root123456',
+        password='123456',
         db='douban_kgqa',
         cursorclass=pymysql.cursors.DictCursor
     )
@@ -472,10 +472,10 @@ def book_to_genre():
 
     # 连接mysql数据库
     kgqa_connection = pymysql.connect(
-        host='localhost',
+        host='127.0.0.1',
         port=3306,
         user='root',
-        password='root123456',
+        password='123456',
         db='douban_kgqa',
         cursorclass=pymysql.cursors.DictCursor
     )
@@ -508,10 +508,10 @@ def author_to_book():
 
     # 连接mysql数据库
     kgqa_connection = pymysql.connect(
-        host='localhost',
+        host='127.0.0.1',
         port=3306,
         user='root',
-        password='root123456',
+        password='123456',
         db='douban_kgqa',
         cursorclass=pymysql.cursors.DictCursor
     )
@@ -549,10 +549,10 @@ def translator_to_book():
 
     # 连接mysql数据库
     kgqa_connection = pymysql.connect(
-        host='localhost',
+        host='127.0.0.1',
         port=3306,
         user='root',
-        password='root123456',
+        password='123456',
         db='douban_kgqa',
         cursorclass=pymysql.cursors.DictCursor
     )
@@ -576,19 +576,20 @@ def translator_to_book():
                     cursor.execute(translator_to_book_sql, (book_info_id, translator_id))
             kgqa_connection.commit()
     except Exception as err:
-        print('author_to_book数据插入错误' + str(err))
+        print(err)
+        print('translator_to_book数据插入错误' + str(err))
 
 if __name__ == '__main__':
-    # movie_genre()
-    # movie_info()
-    # movie_person()
-    # movie_to_genre()
-    # actor_to_movie()
-    # writer_to_movie()
-    # director_to_movie()
-    # book_genre()
-    # book_info()
-    # book_to_genre()
-    # book_person()
-    # author_to_book()
+    movie_genre()
+    movie_info()
+    movie_person()
+    movie_to_genre()
+    actor_to_movie()
+    writer_to_movie()
+    director_to_movie()
+    book_genre()
+    book_info()
+    book_to_genre()
+    book_person()
+    author_to_book()
     translator_to_book()
